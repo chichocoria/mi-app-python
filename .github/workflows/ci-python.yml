@@ -25,7 +25,8 @@ jobs:
 
     - name: Ejecutar tests
       run: |
-        pytest tests/ -v
+        export PYTHONPATH="${{ github.workspace }}"  # Añade la raíz al path
+        python -m pytest tests/ -v
 
     - name: Ejecutar con cobertura
       run: |
