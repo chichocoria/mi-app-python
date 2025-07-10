@@ -30,6 +30,7 @@ jobs:
 
     - name: Ejecutar con cobertura
       run: |
+        export PYTHONPATH="${{ github.workspace }}"  # Añade la raíz al path
         pytest --cov=app --cov-report=term --cov-report=html
 
     - name: Verificar app corriendo
